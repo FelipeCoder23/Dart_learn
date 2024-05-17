@@ -1,0 +1,9 @@
+name: mi_proyecto_dart
+description: Un nuevo proyecto de Dart.
+version: 0.0.1
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  # Aquí puedes agregar tus dependencias
