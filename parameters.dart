@@ -27,6 +27,7 @@ void printCountries(String name1, [String? name2, String? name3]) {
 
 // ahora para el uso de {} este se usa para darle un valor por defecto a los parametros
 // tbn para llamar al funcion con el orden de los parametros que queramos no importa el orden
+// importarte que tbn se peude asignar valores predeterminados a los parametros en este caso son 1
 int findVolume(int length, {int breadth = 1, int height = 1}) {
   print("Length is $length");
   print("Breadth is $breadth");
