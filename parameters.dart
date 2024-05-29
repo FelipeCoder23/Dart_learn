@@ -4,7 +4,9 @@ void main() {
   printCities("New York", "New Delhi", "Sydney");
   print("");
 
-  printCountries("USA"); // You can skip the Optional Positional Parameters
+  printCountries("USA");
+
+  findVolume(10, height: 20, breadth: 5);
 }
 
 // En esta funcion si queremos llamarla debemos darle todos los parametros en este caso son 3
@@ -21,4 +23,15 @@ void printCountries(String name1, [String? name2, String? name3]) {
   print("Name 1 is $name1");
   print("Name 2 is $name2");
   print("Name 3 is $name3");
+}
+
+// ahora para el uso de {} este se usa para darle un valor por defecto a los parametros
+// tbn para llamar al funcion con el orden de los parametros que queramos no importa el orden
+int findVolume(int length, {int breadth = 1, int height = 1}) {
+  print("Length is $length");
+  print("Breadth is $breadth");
+  print("Height is $height");
+
+  print("Volume is ${length * breadth * height}");
+  return length * breadth * height;
 }
