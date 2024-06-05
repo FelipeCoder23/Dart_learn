@@ -73,3 +73,76 @@ void main() {
   var myDog = Dog();
   myDog.speak(); // Outputs: The dog barks
 }
+
+// polimmorfismo
+// Polymorphism es un concepto en el que una clase puede tener múltiples formas.
+// usando la herencia anterior se puede hacer polimorfismo
+// en este caso se puede llamar a la funcion speak de la clase animal y de la clase dog
+// haciendo que speak se puede comportar de diferentes maneras dependiendo del objeto que se le pase
+
+void makeItSpeak(Animal animal) {
+  animal.speak(); // El comportamiento específico depende del tipo de objeto.
+}
+
+void main() {
+  Animal myAnimal = Animal(); // aqui creo un objetico tipo animal
+
+  Dog myDog =
+      Dog(); // aqui creo un objeto tipo dog que es una subclase de animal
+
+  makeItSpeak(myAnimal); // Outputs: The animal makes a sound
+  makeItSpeak(myDog); // Outputs: The dog barks
+}
+// el polimorfismo es poderoso porque permite escribir codido flexible y facil de extender
+// por lo tanto esto permite llamar a una funcion tano de la clase padre como de la clase hija
+// cada una con su propia implementacion
+
+// abtraccion
+// esta  no se puede instanciar, solo se puede usar como una plantilla para otras clases
+// se usa la palabra clave abstract
+
+abstract class Shape {
+  double area(); // Método abstracto este olbiga a todas las clases
+  // que heredan de Shape a implementar el método area
+}
+
+// por ej si se crea una clase Circle que hereda de Shape, se debe implementar el método area
+class Circle extends Shape {
+  double radius;
+
+  Circle(this.radius);
+
+  @override
+  double area() {
+    return 3.14159 * radius * radius;
+  }
+}
+
+// lo mismo para la clase Square
+class Square extends Shape {
+  double side;
+
+  Square(this.side); // este es el constructor de la clase Square sirve
+  //para inicializar la variable side
+  // esta escrito de una forma resumida
+  // porque si no seria asi
+  // Square(double side) {
+  //   this.side = side;
+  // }
+
+  @override
+  double area() {
+    return side * side;
+  }
+}
+
+void main() {
+  var circle = Circle(5);
+  var square = Square(4);
+
+  print(circle.area()); // Outputs: 78.53975
+  print(square.area()); // Outputs: 16
+}
+
+// esto permite gestionar la complejidad al concentrar en lo que debe ahjcer una clase
+//y no en como lo hace
